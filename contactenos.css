@@ -1,0 +1,523 @@
+body {
+  background: -webkit-linear-gradient(90deg, #333333, #000000);
+  background: linear-gradient(90deg, #333333, #000000);
+
+  font-family: "Montserrat", sans-serif;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+footer {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+/* Loader Wrapper */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Loader */
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+}
+
+.loader:before {
+  width: 100%;
+  padding-bottom: 100%;
+  box-shadow: inset 0 0 0 1rem #fff;
+  animation-name: pulsIn;
+}
+
+.loader:after {
+  width: calc(100% - 2rem);
+  padding-bottom: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 #fff;
+}
+
+@keyframes pulsIn {
+  0% {
+    box-shadow: inset 0 0 0 1rem #fff;
+    opacity: 1;
+  }
+  50%,
+  100% {
+    box-shadow: inset 0 0 0 0 #fff;
+    opacity: 0;
+  }
+}
+
+@keyframes pulsOut {
+  0%,
+  50% {
+    box-shadow: 0 0 0 0 #fff;
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 1rem #fff;
+    opacity: 1;
+  }
+}
+
+/* Estilo del botón */
+#scrollButton {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: none; /* Oculto inicialmente */
+}
+
+/* Opcional: Efecto de desvanecimiento */
+#scrollButton.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.btn {
+  border-radius: 50px;
+}
+
+/* BANNER */
+.banner-content {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  margin-left: 20px;
+}
+@media (max-width: 600px) {
+  .banner-content {
+    margin-left: 0px;
+    text-align: center;
+  }
+}
+.banner {
+  background-image: url(img-contact/baner.webp);
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.active {
+  color: #000000 !important;
+}
+
+.nav-link {
+  font-size: 1.05rem;
+  color: #000000;
+}
+
+.nav-link:hover {
+  color: #0a8bdb;
+}
+.navbar {
+  position: fixed !important;
+  background-color: #ffffff !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.navbar.scrolled {
+  background-color: transparent !important;
+}
+.navbar.scrolled:hover {
+  background-color: white !important;
+}
+@media (max-width: 988px) {
+  .navbar {
+    position: fixed !important;
+
+    background-color: rgba(0, 0, 0, 0.685) !important;
+  }
+  .navbar.scrolled:hover {
+    background-color: #000000 !important;
+  }
+  .nav-link {
+    color: white;
+  }
+  .active {
+    color: white !important;
+  }
+}
+.logo {
+  width: 50px;
+}
+@media (max-width: 600px) {
+  .logo {
+    width: 60px;
+  }
+}
+
+/*FINAL DEL CONTENIDO DE LOS UL LI Y a */
+/* REDES */
+.links-all {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.link-1 {
+  justify-content: right;
+  padding: 10px;
+}
+.red-1,
+.red-2,
+.red-3 {
+  width: 50px;
+  height: 100px;
+}
+.red-1:hover {
+  transform: translate(1rem);
+  transition: 0.2s linear;
+}
+.red-2:hover {
+  transform: translate(1rem);
+  transition: 0.2s linear;
+}
+.red-3:hover {
+  transform: translate(1rem);
+  transition: 0.2s linear;
+}
+/* FIN */
+
+/* SECCION FORMULARIO */
+.form1 {
+  background-image: url(img-contact/backgraound.webp);
+  height: auto;
+  background-size: cover;
+  display: flex;
+  padding: 20px;
+}
+.form1 > div {
+  width: 50%;
+}
+
+input {
+  margin-left: 20px;
+  border-radius: 50px;
+  background-color: rgb(216, 216, 216);
+  display: block;
+  width: 70%;
+}
+
+#country {
+  margin-left: 20px;
+  width: 70%;
+  background-color: rgb(216, 216, 216);
+}
+#enviar {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  padding: 7px;
+  background-color: rgb(0, 0, 0);
+  transition-duration: 0.4s;
+}
+#enviar:hover {
+  transform: scale(1.03);
+  color: white;
+  background-color: #0a8bdb;
+}
+textarea {
+  margin-left: 20px;
+  background-color: rgb(216, 216, 216);
+  width: 70%;
+  height: 100px;
+}
+#servicios {
+  margin-left: 20px;
+}
+.div1 {
+  opacity: 0.7;
+  background-color: white;
+  padding: 30px;
+  width: 100%;
+}
+
+.div1 h1 {
+  color: #0a8bdb;
+  font-size: 20px;
+  margin: 10px 0px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.div1 a {
+  text-align: center;
+  width: 20%;
+  font-size: 18px;
+  color: #000000;
+}
+.div1 a:hover {
+  border-radius: 40px;
+  transform: scale(1.02);
+  background-color: #0a8bdb;
+  transition: 0.2s linear;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 600px) {
+  .div1 a {
+    width: 100%;
+  }
+}
+.div1 h4 {
+  font-size: 15px;
+  color: #0a8bdb;
+}
+.div1 p {
+  color: black;
+  text-align: left;
+  margin: 0px 0px 16px;
+  line-height: 24px;
+}
+#info {
+  padding: 5px;
+  margin-top: 20px;
+  display: block;
+}
+.div2 {
+  opacity: 0.7;
+  padding-top: 35px;
+  background-color: white;
+}
+.div2 h3 {
+  color: #0a8bdb;
+  font-size: 20px;
+  margin: 10px 0px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  font-weight: 700;
+}
+label {
+  margin-left: 20px;
+}
+#h3-serv {
+  margin-left: 20px;
+}
+
+/* INFORMACION DE CONTACTO DE LA EMPRESA */
+.container-vista {
+  margin-top: 100px;
+  background-image: url(img/cartagena.webp);
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headin4 {
+  padding: 50px;
+  background-color: #00000094;
+}
+
+.title-crtg {
+  text-align: center;
+  color: white;
+}
+.parraf {
+  color: white;
+  text-align: center;
+}
+.title-contact {
+  color: white;
+  text-align: center;
+}
+.list-group-item {
+  text-align: center;
+  color: white;
+  background-color: transparent !important;
+}
+.list-group-item:hover {
+  background-color: white !important;
+  border-radius: 10px;
+  transition: 0.2s linear;
+}
+.contc {
+  padding-left: 200px;
+  padding-right: 200px;
+  text-decoration: none;
+  color: white;
+}
+@media (max-width: 600px) {
+  .contc {
+    padding: 0px;
+  }
+}
+.contc:hover {
+  color: #000000;
+}
+/* FIN */
+/* FOOTER  */
+
+.contenedor-footer {
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .contenedor-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .contenedor-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.logo2 {
+  justify-content: left;
+  width: 100px;
+  margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  .img-log2,
+  .logo2 {
+    margin: 0px 0px 20px;
+  }
+}
+@media (max-width: 844px) {
+  .img-log02 {
+    margin-left: 0px;
+  }
+}
+.img-logo2,
+.employed,
+.sobre {
+  flex: 25%;
+  padding: 20px;
+  margin: 10px;
+}
+
+.img-log2 p {
+  color: white;
+  text-align: center;
+}
+.employed h4 {
+  color: white;
+}
+.li-fot,
+a {
+  text-decoration: none;
+  list-style: none;
+  margin-top: 10px;
+  color: white;
+}
+.li-fot a:hover {
+  color: #6b6b6b;
+  transition: 0.2s linear;
+}
+.sobre {
+  list-style: none;
+  margin-top: 10px;
+  color: white;
+}
+.red-footer {
+  display: flex;
+  min-height: auto;
+  align-items: center;
+}
+.red-footer h4 {
+  color: white;
+}
+.icon-3 {
+  padding: 5px;
+  margin-left: 10px;
+}
+.icon-3:hover {
+  color: #dbdbdb69;
+  transition: 0.2s linear;
+}
+.encabez-final {
+  background-color: #000000;
+  display: flex;
+  min-height: auto;
+  justify-content: center;
+}
+.encabez-final p {
+  padding: 30px;
+  color: white;
+}
+.black2 {
+  color: #ffffff;
+}
+.volantis-tecg {
+  width: 50px;
+}
+.volantis-tecg:hover {
+  transform: translate(1rem);
+  transition: 0.5s linear;
+}
+.black2:hover {
+  color: #6abbe0;
+}
+.overline-final {
+  height: 1px;
+  background-color: white;
+}
+
+/* FIN */
